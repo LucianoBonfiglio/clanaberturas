@@ -22,5 +22,14 @@ $email_body = "Ha recibido un nuevo mensaje del formulario de contacto de su sit
 $headers = "De: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "responder a: $email_address";   
 mail($to,$email_subject,$email_body,$headers);
-return true;         
+return true; 
+$validator = Validator::make(request()->all(), [
+    
+    'g-recaptcha-response' => 'recaptcha',
+]);
+// Verificamos si hay algún error
+if($validator->fails()) {
+    
+    $errors = $validator->errors();
+}        
 ?>

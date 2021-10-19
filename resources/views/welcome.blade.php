@@ -25,6 +25,8 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    {!! htmlScriptTagJsApi(['lang' => 'es']) !!}
+
 </head>
 <body id="page-top" class="politics_version">
 
@@ -571,6 +573,8 @@
                     <div class="contact_form">
                         <div id="message"></div>
                         <form id="contactForm" name="sentMessage" action="mail/contact_me" novalidate="novalidate">
+                        @csrf
+                        
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
@@ -591,6 +595,7 @@
 										<textarea class="form-control" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Escriba su consulta."></textarea>
 										<p class="help-block text-danger"></p>
 									</div>
+                                    {!! htmlFormSnippet() !!}
 								</div>
 								<div class="clearfix"></div>
 								<div class="col-lg-12 text-center">
