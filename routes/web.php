@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('contacto', [contactoController::class, 'store'])->name('contacto.store');

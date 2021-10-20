@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="css/custom.css">
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -572,7 +574,7 @@
                 <div class="col-md-12">
                     <div class="contact_form">
                         <div id="message"></div>
-                        <form id="contactForm" name="sentMessage" action="mail/contact_me" novalidate="novalidate">
+                        <form id="contactForm" action="{{route('contacto.store')}}" novalidate="novalidate" method="POST">
                         @csrf
                         
 							<div class="row">
@@ -595,7 +597,8 @@
 										<textarea class="form-control" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Escriba su consulta."></textarea>
 										<p class="help-block text-danger"></p>
 									</div>
-                                    {!! htmlFormSnippet() !!}
+                                    <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                                    <br/>
 								</div>
 								<div class="clearfix"></div>
 								<div class="col-lg-12 text-center">
