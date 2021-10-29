@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\contactoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('contacto', [contactoController::class, 'store'])->name('contacto.store');

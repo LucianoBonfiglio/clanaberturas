@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
    
@@ -569,50 +569,20 @@
             <div class="section-title text-center">
                 <h3>Contactenos</h3>
             </div>
+                <div class="contact_datos">
+                    <p class="datos">
+                        <b>Dirección</b><br>
+                        Omar Carrasco 3849 (Ex Riccheri)<br>
+                        Rosario (2000) – SF – Argentina<br><br>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="contact_form">
-                        <div id="message"></div>
-                        <form id="contactForm" action="{{route('contacto.store')}}" novalidate="novalidate" method="POST">
-                        @csrf
-                        
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<input class="form-control" id="name" type="text" placeholder="Nombre y Apellido" required="required" data-validation-required-message="Ingrese su nombre.">
-										<p class="help-block text-danger"></p>
-									</div>
-									<div class="form-group">
-										<input class="form-control" id="email" type="email" placeholder="Correo Electrónico" required="required" data-validation-required-message="Ingrese su correo electronico.">
-										<p class="help-block text-danger"></p>
-									</div>
-									<div class="form-group">
-										<input class="form-control" id="phone" type="tel" placeholder="Teléfono" required="required" data-validation-required-message="Ingrese su numero de teléfono.">
-										<p class="help-block text-danger"></p>
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<textarea class="form-control" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Escriba su consulta."></textarea>
-										<p class="help-block text-danger"></p>
-									</div>
-                                    <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-                                    <br/>
-								</div>
-								<div class="clearfix"></div>
-								<div class="col-lg-12 text-center">
-									<div id="success"></div>
-									<button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Enviar" type="submit">Enviar</button>
-								</div>
-							</div>
-						</form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                        <b>Correo Electronico</b><br>
+                        info@clanaberturas.com.ar<br><br>
 
+                        <b>Whatsapp</b><br>
+                        341-6182878
+                    </p>          
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.9940917402078!2d-60.67396918481282!3d-32.97755768091193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b7ab86d446e795%3A0x609d67ab616ff994!2sO.%20Carrasco%203849%2C%20S2000%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1635517349868!5m2!1ses!2sar" width="400" height="300" style="border:1;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>           
     <div class="copyrights">
         <div class="container">
             <div class="footer-distributed">

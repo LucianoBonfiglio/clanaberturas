@@ -2157,11 +2157,26 @@ select.mobile-device {
     color: #bcbcbc !important;
 }
 
-.contact_form {
+.contact_datos {
     border: 1px solid #ededed;
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
-    background-color: #f2f3f5;
+    background-color: #e0e0e0;
     padding: 40px 30px;
+    position: relative;
+    left: 0px;
+}
+
+.contact_datos iframe {
+    border: 1px solid #050000;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+    background-color: #f2f3f5;
+    position: relative;
+    left: 300px;
+}
+
+.contact_datos .datos {
+    color: black;
+    float: left;;
 }
 
 .contact_form .form-control {
