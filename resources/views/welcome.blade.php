@@ -21,6 +21,8 @@
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -30,6 +32,7 @@
     {!! htmlScriptTagJsApi(['lang' => 'es']) !!}
 
 </head>
+
 <body id="page-top" class="politics_version">
 
     <div id="preloader">
@@ -37,7 +40,7 @@
 			<div class="loader">
 				<span class="loader-inner">Clan Aberturas</span>
 			</div>
-		</div>
+        </div>
     </div>
 	
 	<div class="fat-nav">
@@ -58,7 +61,56 @@
         <a class="bt-menu" href="#page-top">
             <img class="img-fluid-logo" src="img/logo.png" alt="" /><h2>Clan Aberturas</h2>
         </a>    
-      </div>
+        <a class="navbar-brand" href="{{ url('/') }}">
+            {{ config('app.name', 'Laravel') }}
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ms-auto">
+            <!-- Authentication Links -->
+            @guest
+                @if (Route::has('login'))
+                    <li class="nav-item">
+                        <h4><a href="{{ route('login') }}">{{ __('Ingresar') }}</a></h4>
+                    </li>
+                @endif
+                
+                @else
+                <h3>
+                    <li class="nav-item dropdown">
+                        <a href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
+
+                        <div aria-labelledby="navbarDropdown">
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a href="{{ route('register') }}">{{ __('Registrar') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('home') }}">{{ __('Panel de Control') }}</a>
+                                </li>
+                            @endif
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Salir') }} 
+                            </a>
+                </h3>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                @endguest
+        </ul>
+    <main class="py-4">
+        @yield('content')
+    </main>
+    </div>
       <div class="fat-nav">
         <div class="fat-nav__wrapper">
             <ul>
